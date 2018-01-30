@@ -1,0 +1,44 @@
+<header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <nav id="upper-nav" class="inner">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <div class="sub-nav">
+        <% if (theme.rss){ %>
+          <a id="nav-rss-link" class="nav-icon" href="<%- theme.rss %>" title="RSS Feed"></a>
+        <% } %>
+        <% if (theme.github){ %>
+          <a id="nav-github" class="nav-icon" href="<%- theme.github %>"></a>
+        <% } %>
+      </div>
+    </nav>
+    <div id="header-title">
+      <% if (theme.blog_title){ %>
+        <h1 id="blog-title-wrap">
+          <a href="/" id="blog-title"><%= theme.blog_title %></a>
+        </h1>
+      <% } %>
+    </div>
+    <div id="contenedor">
+      <ul class="cube">
+        <li class="cara">前端</li>
+        <li class="cara">框架</li>
+        <li class="cara">JS</li>
+        <li class="cara">HTML5</li>
+        <li class="cara">CSS</li>
+        <li class="cara">心得</li>
+      </ul>
+    </div>
+    <nav id="main-nav">
+      <% for (var i in theme.menu){ %>
+        <a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+      <% } %>
+	  <a class="main-nav-link" href="https://zuobaiquan.github.io/tags/英语学习">英语学习</a>
+	  <a class="main-nav-link" href="http://weibo.com/zuobaiquan" target= '_blank'>微博</a>
+	  <a class="main-nav-link" href="http://www.jianshu.com/users/b9e115d840f0/timeline" target= '_blank'>简书</a>
+	  <a class="main-nav-link" href="https://www.zhihu.com/people/zuobaiquan" target= '_blank'>知乎</a>
+	  <a class="main-nav-link" href="https://segmentfault.com/u/haokunaaa" target= '_blank'>SegmentFault</a>
+	  <a class="main-nav-link" href="https://github.com/zuobaiquan?tab=repositories" target= '_blank'>Github</a>
+    </nav>
+  </div>
+</header>
