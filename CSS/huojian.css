@@ -46,7 +46,7 @@
 	bottom: 0
 }
 #sideCatalog #sideCatalog-sidebar .sideCatalog-sidebar-top,#sideCatalog #sideCatalog-sidebar .sideCatalog-sidebar-bottom {
-	background: url("http://images.cnblogs.com/cnblogs_com/miangao/1001115/o_o_sideToolbar.png") no-repeat scroll 0 -199px transparent;
+	background: url("http://zuobaiquan.com/blogImg/CSS/o_o_sideToolbar.png") no-repeat scroll 0 -199px transparent;
 	height: 10px;
 	left: -5px;
 	overflow: hidden;
@@ -92,7 +92,7 @@
 	font-weight: bold
 }
 .sideCatalog-dot {
-	background: url("http://images.cnblogs.com/cnblogs_com/miangao/1001115/o_o_sideToolbar.png") repeat scroll 0 -222px transparent;
+	background: url("http://zuobaiquan.com/blogImg/CSS/o_o_sideToolbar.png") repeat scroll 0 -222px transparent;
 	cursor: pointer;
 	font-size: 12px;
 	height: 10px;
@@ -104,14 +104,14 @@
 	width: 6px
 }
 #sideCatalog .highlight .sideCatalog-dot {
-	background: url("http://images.cnblogs.com/cnblogs_com/miangao/1001115/o_o_sideToolbar.png") no-repeat scroll -271px -38px transparent;
+	background: url("http://zuobaiquan.com/blogImg/CSS/o_o_sideToolbar.png") no-repeat scroll -271px -38px transparent;
 	height: 13px;
 	left: -23px;
 	top: 3px;
 	width: 18px
 }
 #sideCatalogBtn {
-	background: url("http://images.cnblogs.com/cnblogs_com/miangao/1001115/o_o_sideToolbar.png") no-repeat scroll 0 0 transparent;
+	background: url("http://zuobaiquan.com/blogImg/CSS/o_o_sideToolbar.png") no-repeat scroll 0 0 transparent;
 	cursor: pointer;
 	display: block;
 	height: 45px;
@@ -123,12 +123,12 @@
 	outline: 0
 }
 #sideCatalogBtn:hover {	
-	background: url("http://images.cnblogs.com/cnblogs_com/miangao/1001115/o_o_sideToolbar.png") no-repeat scroll -154px 0 transparent;
+	background: url("http://zuobaiquan.com/blogImg/CSS/o_o_sideToolbar.png") no-repeat scroll -154px 0 transparent;
 	
 }
 
 #sideToolbar-up {
-	background: url("http://images.cnblogs.com/cnblogs_com/miangao/1001115/o_o_sideToolbar.png") no-repeat scroll -1px -62px transparent;
+	background: url("http://zuobaiquan.com/blogImg/CSS/o_o_sideToolbar.png") no-repeat scroll -1px -62px transparent;
 	border-radius: 2px;
 	display: block;
 	height: 45px;
@@ -137,7 +137,7 @@
 	outline: 0
 }
 #sideToolbar-up:hover {
-	background: url("http://images.cnblogs.com/cnblogs_com/miangao/1001115/o_o_sideToolbar.png") no-repeat scroll -74px -62px transparent
+	background: url("http://zuobaiquan.com/blogImg/CSS/o_o_sideToolbar.png") no-repeat scroll -74px -62px transparent
 }
 #div_digg{
 	z-index: 999;
@@ -146,7 +146,7 @@
 /*以下是返回顶部*/
 
 #gotop{
-background: url("http://images.cnblogs.com/cnblogs_com/miangao/1001115/o_o_sideToolbar.png") no-repeat scroll -1px -62px transparent !important;
+background: url("http://zuobaiquan.com/blogImg/CSS/o_o_sideToolbar.png") no-repeat scroll -1px -62px transparent !important;
 width: 45px;
 height: 45px;
 overflow: hidden;
@@ -159,7 +159,7 @@ z-index: 999;
 }
 
 #gotop:hover{
-background: url(http://images.cnblogs.com/cnblogs_com/miangao/1001115/o_o_sideToolbar.png") no-repeat scroll -74px -62px transparent !important;
+background: url("http://zuobaiquan.com/blogImg/CSS/o_o_sideToolbar.png") no-repeat scroll -74px -62px transparent !important;
 }
 
 /*以下是返回顶部*/
