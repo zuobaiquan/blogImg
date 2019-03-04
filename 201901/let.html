@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://www.babeljs.cn/repl/ -->
+<html lang="zh-CN" class="babel-fullscreen js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Babel · 用于编写下一代 JavaScript 的编译器 | Babel中文网</title><meta name="description" content="用于编写下一代 JavaScript 的编译器"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./let_files/docsearch.min.css"><link rel="stylesheet" href="./let_files/main.css"><link rel="canonical" href="https://babeljs.cn/repl/"><link rel="alternate" type="application/rss+xml" title="Babel" href="https://babeljs.cn/feed.xml"><link rel="icon" href="https://www.babeljs.cn/favicon.ico" type="image/x-icon"><meta name="og:url" content="https://babeljs.cn"><meta name="og:image" content="website"><meta name="og:title" content="Babel · 用于编写下一代 JavaScript 的编译器 | Babel中文网"><meta name="og:description" content="用于编写下一代 JavaScript 的编译器"><meta name="og:image" content="https://babeljs.cn/images/share-image.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@babeljs"><meta name="twitter:title" content="Babel · 用于编写下一代 JavaScript 的编译器 | Babel中文网"><meta name="twitter:description" content="用于编写下一代 JavaScript 的编译器"><meta name="twitter:image:src" content="https://babeljs.cn/images/share-image.png"><meta name="twitter:url" content="https://babeljs.cn/repl/"> <script src="./let_files/hm.js.下载"></script><script> var _hmt = _hmt || []; (function() { var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?7d7e96af885ecd66a8c4ac73dc983681"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script><style type="text/css" data-emotion=""></style><script charset="utf-8" src="chrome-extension://jgphnjokjhjlcnnajmfjlacjnjkhleah/js/btype.js"></script></head><body><input type="checkbox" id="babel-toggle-search" class="babel-toggle-search-checkbox"><header class="navbar navbar-default navbar-fixed-top babel-nav" id="top" role="banner"><div class="container"> <a href="https://www.babeljs.cn/" class="navbar-brand logo">Babel</a><div class="babel-navbar-toggles"><div class="navbar-header"> <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#babel-navbar" aria-controls="babel-navbar" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <label for="babel-toggle-search" class="navbar-toggle babel-toggle-search-open"> <span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> </label></div></div><nav id="babel-navbar" class="collapse navbar-collapse babel-navbar"><ul class="nav navbar-nav"><li> <a href="https://www.babeljs.cn/learn-es2015/">学习 ES2015</a></li><li class="dropdown "> <a href="https://www.babeljs.cn/repl/#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">文档 <span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li> <a href="https://www.babeljs.cn/docs/setup/">配置</a></li><li> <a href="https://www.babeljs.cn/docs/editors.html">编辑器</a></li><li> <a href="https://www.babeljs.cn/docs/usage/caveats/">注意事项</a></li><li> <a href="https://www.babeljs.cn/docs/community/videos/">视频</a></li><li class="group-name">相关依赖</li><li> <a href="https://www.babeljs.cn/docs/core-packages/">babel-core</a></li><li> <a href="https://www.babeljs.cn/docs/usage/polyfill/">babel-polyfill</a></li><li> <a href="https://www.babeljs.cn/docs/plugins/">Plugins</a></li><li class="group-name">使用方式</li><li> <a href="https://www.babeljs.cn/docs/usage/babelrc/">.babelrc</a></li><li> <a href="https://www.babeljs.cn/docs/usage/cli/">babel-cli</a></li><li> <a href="https://www.babeljs.cn/docs/usage/babel-register/">babel-register</a></li><li> <a href="https://www.babeljs.cn/docs/usage/api/">API</a></li></ul></li><li class="active"> <a href="https://www.babeljs.cn/repl/">试用</a></li><li> <a href="https://www.babeljs.cn/blog/">Blog</a></li><li> <a href="https://www.babeljs.cn/faq">常见问题</a></li><li> <a href="https://www.babeljs.cn/team">团队</a></li><li> <a href="https://docschina.org/">印记中文</a></li><li> <a href="https://babel.docschina.org/">Babel V7</a></li></ul><ul class="nav navbar-nav navbar-right nav-social"><li> <a href="https://opencollective.com/babel">赞助</a></li><li> <a href="https://slack.babeljs.io/" title="Join us on Slack"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect x="219.27" y="221.3" width="72.04" height="69.58" transform="translate(-67.42 94.64) rotate(-18.52)"></rect><path d="M489.84,185.3C437,9.29,360.9-31.64,184.9,21.16S-32,150.1,20.76,326.1,149.7,543,325.7,490.24,542.64,361.3,489.84,185.3ZM401,299.5l-33.15,11.05,11.46,34.38c4.5,13.92-2.87,29.06-16.78,33.56-2.87.82-6.14,1.64-9,1.23a27.32,27.32,0,0,1-24.56-18l-11.46-34.38-68.36,22.92,11.46,34.38c4.5,13.92-2.87,29.06-16.78,33.56-2.87.82-6.14,1.64-9,1.23a27.32,27.32,0,0,1-24.56-18L198.81,367l-33.15,11.05c-2.87.82-6.14,1.64-9,1.23a27.32,27.32,0,0,1-24.56-18c-4.5-13.92,2.87-29.06,16.78-33.56L182,316.69l-22.1-65.9-33.15,11.05c-2.87.82-6.14,1.64-9,1.23a27.32,27.32,0,0,1-24.56-18C88.71,231.14,96.08,216,110,211.49l33.15-11.05-11.46-34.38c-4.5-13.92,2.87-29.06,16.78-33.56s29.06,2.87,33.56,16.78l11.46,34.38,68.36-22.92-11.46-34.38c-4.5-13.92,2.87-29.06,16.78-33.56s29.06,2.87,33.56,16.78L312.2,144l33.15-11.05c13.92-4.5,29.06,2.87,33.56,16.78s-2.87,29.06-16.78,33.56L329,194.3l22.1,65.9,33.15-11.05c13.92-4.5,29.06,2.87,33.56,16.78S414.93,295,401,299.5Z" transform="translate(0.7 0.3)"></path></svg> </a></li><li> <a href="https://twitter.com/babeljs" title="Follow us on Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 416.32"><title>twitter</title><path d="M160.83,464.16c193.2,0,298.92-160.22,298.92-298.92,0-4.51,0-9-.2-13.52A214,214,0,0,0,512,97.22a212.93,212.93,0,0,1-60.44,16.6,105.7,105.7,0,0,0,46.3-58.19A209,209,0,0,1,431.07,81a105.09,105.09,0,0,0-181.73,71.91,116.12,116.12,0,0,0,2.66,24c-87.28-4.3-164.73-46.3-216.56-109.82A105.48,105.48,0,0,0,68,207.44a106.27,106.27,0,0,1-47.53-13.11v1.43a105.28,105.28,0,0,0,84.21,103.06,105.67,105.67,0,0,1-47.33,1.84,105.06,105.06,0,0,0,98.14,72.94A210.72,210.72,0,0,1,25,418.68a202.17,202.17,0,0,1-25-1.43,298.85,298.85,0,0,0,160.83,46.92" transform="translate(0 -47.84)" fill="#010101"></path></svg> </a></li><li> <a href="https://github.com/babel/babel" title="Contribute on GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 499.36"><path d="M256,6.32c-141.36,0-256,114.61-256,256,0,113.09,73.34,209,175.08,242.9,12.8,2.35,17.47-5.56,17.47-12.34,0-6.08-.22-22.18-.35-43.54C121,464.83,106,415,106,415c-11.64-29.57-28.42-37.45-28.42-37.45C54.31,361.71,79.31,362,79.31,362c25.69,1.81,39.21,26.38,39.21,26.38,22.84,39.12,59.92,27.82,74.5,21.27,2.33-16.54,8.94-27.82,16.25-34.22C152.43,369,92.67,347,92.67,248.94c0-27.95,10-50.8,26.35-68.69-2.63-6.48-11.42-32.5,2.51-67.75,0,0,21.49-6.88,70.4,26.24a242.65,242.65,0,0,1,128.18,0c48.87-33.13,70.33-26.24,70.33-26.24,14,35.25,5.18,61.27,2.55,67.75,16.41,17.9,26.31,40.75,26.31,68.69,0,98.35-59.85,120-116.88,126.32,9.19,7.9,17.38,23.53,17.38,47.41,0,34.22-.31,61.83-.31,70.23,0,6.85,4.61,14.81,17.6,12.31C438.72,471.29,512,375.4,512,262.34,512,120.94,397.37,6.32,256,6.32Z" transform="translate(0 -6.32)" fill="#191717" fill-rule="evenodd"></path></svg> </a></li></ul><label for="babel-toggle-search" class="navbar-toggle babel-toggle-search-open"> <span class="sr-only">打开搜索</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span> </label><div class="navbar-form navbar-right babel-search" role="search"><div class="input-group"> <label class="sr-only" aria-label="Search" for="babel-search-input">搜索</label><div class="babel-search-input-wrapper"> <span class="algolia-autocomplete" style="position: relative; display: table-cell; direction: ltr;"><input type="text" class="form-control ds-input" id="babel-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="在文档中搜索..." role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: &quot;Avenir Next&quot;, Avenir, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="ds-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;"><div class="ds-dataset-1"></div></span></span> <label for="babel-toggle-search" class="babel-toggle-search-close"> <span class="sr-only">关闭搜索</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> </label></div></div></div></nav></div></header><link rel="stylesheet" href="./let_files/codemirror.css"> <noscript>You need to enable JavaScript to run this app.</noscript><div id="root" class="babel-repl-v2"><div class="css-14ulzvs"><div class="css-1sa6uam css-1tu59u4"><div class="css-10f83sq"><div class="css-mn1kcl"><div class="css-1xvj1io css-1tgt1nc"><div class="css-kgiytp"><div class="css-1c7117x">Settings</div><svg class="css-fpbvzc css-1s8q8x0 css-6bg42f" viewBox="0 0 24 24"><path class="css-kqzqgg" d=" M15.41,16.58 L10.83,12 L15.41,7.41 L14,6 L8,12 L14,18 L15.41,16.58 Z"></path></svg></div><div class="css-1ahppc0"><label class="css-1h259tg"><input type="checkbox" class="css-1yr5jo5" value="on">Evaluate</label><label class="css-1h259tg"><input type="checkbox" class="css-1yr5jo5" value="on">Line Wrap</label><label class="css-1h259tg"><input type="checkbox" class="css-1yr5jo5" value="on">Minify</label><label class="css-1h259tg"><input type="checkbox" class="css-1yr5jo5" value="on" disabled=""><div class=" css-1wgs8bf css-11ukie"><div class="css-9p5r0w css-1xg0iag"></div><div class="css-9p5r0w css-1rvhqqk"></div><div class="css-9p5r0w css-5ks58v"></div><div class="css-9p5r0w css-zlvuun"></div><div class="css-9p5r0w css-10exm2s"></div></div></label><label class="css-1h259tg"><input type="checkbox" class="css-1yr5jo5" value="on">File Size</label></div></div><div class="css-1xvj1io css-1tgt1nc"><div class="css-kgiytp"><div class="css-1c7117x">Presets</div><svg class="css-fpbvzc css-1s8q8x0 css-6bg42f" viewBox="0 0 24 24"><path class="css-kqzqgg" d=" M15.41,16.58 L10.83,12 L15.41,7.41 L14,6 L8,12 L14,18 L15.41,16.58 Z"></path></svg></div><div class="css-1ahppc0"><label class="css-1h259tg"><input type="checkbox" class="css-1yr5jo5" value="on">es2015</label><label class="css-1h259tg"><input type="checkbox" class="css-1yr5jo5" value="on">es2015-loose</label><label class="css-1h259tg"><input type="checkbox" class="css-1yr5jo5" value="on">es2016</label><label class="css-1h259tg"><input type="checkbox" class="css-1yr5jo5" value="on">es2017</label><label class="css-1h259tg"><input type="checkbox" class="css-1yr5jo5" value="on">stage-0</label><label class="css-1h259tg"><input type="checkbox" class="css-1yr5jo5" value="on">stage-1</label><label class="css-1h259tg"><input type="checkbox" class="css-1yr5jo5" value="on">stage-2</label><label class="css-1h259tg"><input type="checkbox" class="css-1yr5jo5" value="on">stage-3</label><label class="css-1h259tg"><input type="checkbox" class="css-1yr5jo5" value="on">react</label></div></div><div class="css-1xvj1io css-1tgt1nc css-i9eoa9"><div class="css-kgiytp"><div class="css-1c7117x"><span>Env Preset <small class="css-isk1vb"></small></span></div><svg class="css-fpbvzc css-1s8q8x0 " viewBox="0 0 24 24"><path class="css-kqzqgg" d=" M15.41,16.58 L10.83,12 L15.41,7.41 L14,6 L8,12 L14,18 L15.41,16.58 Z"></path></svg></div></div><div class="css-1xvj1io css-1tgt1nc css-i9eoa9"><div class="css-kgiytp"><div class="css-1c7117x"><span class="css-1a2mzes">Plugins<svg viewBox="0 0 130 21" width="100" height="25" xmlns="http://www.w3.org/2000/svg" style="margin-left: 10px;"><path d="M96.667 15.57c0 1.719-.44 2.974-1.327 3.773-.887.799-2.24 1.197-4.066 1.197-.666 0-2.051-.129-3.159-.373l.408-1.997c.925.193 2.15.245 2.79.245 1.017 0 1.741-.206 2.175-.618.433-.412.647-1.023.647-1.835v-.413a7.533 7.533 0 0 1-.99.374c-.408.123-.88.186-1.411.186-.7 0-1.333-.11-1.91-.328a4 4 0 0 1-1.482-.966 4.424 4.424 0 0 1-.958-1.596c-.227-.637-.343-1.778-.343-2.615 0-.785.123-1.77.363-2.427a4.638 4.638 0 0 1 1.068-1.694c.466-.47 1.035-.83 1.703-1.094a6.276 6.276 0 0 1 2.299-.431c.822 0 1.58.103 2.317.225a18.7 18.7 0 0 1 1.877.393v9.993h-.001zm-7.037-4.971c0 1.055.233 2.227.7 2.717.466.489 1.068.733 1.806.733.402 0 .783-.057 1.139-.167.356-.11.64-.24.867-.393V7.237c-.18-.039-.938-.192-1.67-.212-.919-.026-1.617.347-2.11.946-.486.6-.732 1.649-.732 2.628zm19.051 0a6.07 6.07 0 0 1-.376 2.195 5.186 5.186 0 0 1-1.068 1.797c-.46.496-1.01.881-1.657 1.152-.648.27-1.644.425-2.143.425-.498-.005-1.489-.147-2.13-.425a4.831 4.831 0 0 1-1.65-1.152 5.302 5.302 0 0 1-1.074-1.797 5.953 5.953 0 0 1-.39-2.195c0-.85.118-1.668.377-2.363a5.233 5.233 0 0 1 1.087-1.783 4.855 4.855 0 0 1 1.657-1.147c.64-.27 1.346-.4 2.11-.4.764 0 1.47.136 2.117.4.648.271 1.204.65 1.657 1.147.46.496.815 1.088 1.074 1.783.272.695.408 1.513.408 2.363h.001zm-2.59.005c0-1.088-.24-1.996-.705-2.627-.465-.637-1.12-.952-1.954-.952-.836 0-1.49.315-1.955.952-.466.637-.693 1.539-.693 2.627 0 1.102.233 1.842.7 2.48.466.644 1.12.96 1.955.96s1.489-.322 1.954-.96c.466-.644.7-1.378.7-2.48h-.001zm8.229 5.563c-4.15.02-4.15-3.335-4.15-3.869L110.164.399 112.696 0v11.822c0 .302 0 2.222 1.625 2.227v2.118h-.001zm4.46 0h-2.545V5.3l2.545-.4v11.268zM117.505 3.71c.848 0 1.54-.684 1.54-1.526a1.53 1.53 0 0 0-1.54-1.526 1.53 1.53 0 0 0-1.541 1.526c0 .844.692 1.526 1.54 1.526zm7.6 1.197c.835 0 1.541.103 2.11.31.57.205 1.03.496 1.367.862.337.368.575.869.718 1.397.15.528.22 1.107.22 1.744v6.478c-.389.084-.977.18-1.767.297-.79.115-1.677.173-2.66.173a8.07 8.07 0 0 1-1.793-.186 3.797 3.797 0 0 1-1.392-.6 2.901 2.901 0 0 1-.9-1.068c-.213-.437-.323-1.055-.323-1.7 0-.618.123-1.01.363-1.435.246-.426.575-.773.99-1.044.42-.27.9-.463 1.45-.579a8.359 8.359 0 0 1 1.722-.174c.279 0 .57.02.88.052.311.032.635.09.985.174v-.412c0-.29-.032-.567-.104-.824a1.756 1.756 0 0 0-.363-.69 1.694 1.694 0 0 0-.686-.462 2.997 2.997 0 0 0-1.082-.193c-.582 0-1.113.07-1.599.155a7.43 7.43 0 0 0-1.191.29l-.304-2.068c.317-.11.79-.218 1.398-.328.609-.11 1.262-.168 1.962-.168l-.001-.001zm.214 9.136c.776 0 1.353-.045 1.754-.123v-2.562a6.024 6.024 0 0 0-1.49-.187c-.278 0-.563.02-.848.064a2.561 2.561 0 0 0-.77.226 1.38 1.38 0 0 0-.551.463c-.143.2-.207.316-.207.618 0 .593.207.934.583 1.16.381.231.886.341 1.528.341zM75.33 4.971c.836 0 1.542.103 2.111.31.57.205 1.03.496 1.366.862.343.374.576.869.719 1.397a6.4 6.4 0 0 1 .22 1.744v6.478c-.39.084-.978.18-1.767.297-.79.115-1.677.173-2.66.173a8.07 8.07 0 0 1-1.793-.186 3.797 3.797 0 0 1-1.392-.6 2.901 2.901 0 0 1-.9-1.068c-.214-.437-.324-1.055-.324-1.7 0-.618.123-1.01.363-1.435.246-.426.576-.773.99-1.044.421-.27.9-.463 1.45-.579a8.359 8.359 0 0 1 1.723-.174c.279 0 .57.02.88.052.304.032.635.09.985.174V9.26c0-.29-.032-.567-.104-.824a1.756 1.756 0 0 0-.363-.69 1.694 1.694 0 0 0-.687-.462 2.997 2.997 0 0 0-1.081-.193 9.17 9.17 0 0 0-1.6.155 7.43 7.43 0 0 0-1.19.29l-.304-2.068c.316-.11.79-.218 1.398-.328a10.507 10.507 0 0 1 1.962-.168l-.002-.001zm.22 9.142c.777 0 1.353-.045 1.754-.123v-2.562a6.024 6.024 0 0 0-1.49-.187c-.278 0-.563.02-.848.064a2.561 2.561 0 0 0-.77.226 1.38 1.38 0 0 0-.55.463c-.144.2-.208.316-.208.618 0 .592.207.934.583 1.16.376.225.886.341 1.528.341h.001zm10.26 2.054c-4.149.02-4.149-3.335-4.149-3.869L81.657.399 84.188 0v11.822c0 .302 0 2.222 1.625 2.227v2.118h-.001zM6.524 12.713c0 .906-.328 1.617-.984 2.133-.654.515-1.558.774-2.71.774-1.153 0-2.096-.178-2.83-.536v-1.576c.464.219.958.39 1.48.515.523.126 1.01.188 1.462.188.659 0 1.146-.125 1.46-.375.313-.251.47-.588.47-1.01a1.27 1.27 0 0 0-.432-.97c-.288-.265-.883-.578-1.784-.94-.93-.377-1.585-.807-1.966-1.29C.31 9.143.118 8.562.118 7.884c0-.851.303-1.52.907-2.008.604-.488 1.414-.732 2.432-.732.976 0 1.946.214 2.913.642l-.53 1.36c-.906-.381-1.714-.573-2.425-.573-.538 0-.947.117-1.226.352-.28.236-.419.545-.419.93 0 .265.056.492.168.68.111.188.296.366.55.533.256.168.716.388 1.381.662.748.31 1.297.601 1.645.87.349.27.604.575.767.914.163.34.244.74.244 1.199h-.001zm5.164 2.906c-1.198 0-2.137-.35-2.813-1.05-.676-.7-1.014-1.662-1.014-2.89 0-1.259.314-2.248.941-2.968.628-.72 1.49-1.08 2.586-1.08 1.018 0 1.821.308 2.412.927.59.618.885 1.467.885 2.551v.885H9.548c.024.748.226 1.324.606 1.726.38.402.918.602 1.61.602.455 0 .88-.042 1.271-.128a6.69 6.69 0 0 0 1.265-.43v1.331c-.4.19-.804.325-1.213.405a7.42 7.42 0 0 1-1.4.118h.001zm-.3-6.747c-.52 0-.937.165-1.252.495-.313.33-.5.81-.56 1.443h3.498c-.009-.637-.163-1.12-.46-1.446-.297-.328-.706-.492-1.226-.492zm9.98 6.607l-.327-1.073h-.055c-.373.47-.746.789-1.123.959-.376.17-.86.254-1.45.254-.758 0-1.349-.205-1.774-.613-.426-.41-.638-.987-.638-1.735 0-.795.295-1.395.885-1.8.59-.403 1.489-.624 2.697-.66l1.33-.042v-.412c0-.492-.114-.86-.345-1.105-.23-.243-.586-.366-1.07-.366a3.7 3.7 0 0 0-1.135.174 8.434 8.434 0 0 0-1.046.411l-.53-1.171a5.723 5.723 0 0 1 1.374-.499c.498-.113.967-.17 1.408-.17.98 0 1.72.214 2.219.642.5.428.75 1.099.75 2.014v5.192h-1.172.002zm-2.439-1.115c.595 0 1.072-.167 1.433-.499.36-.332.54-.798.54-1.397V11.8l-.99.042c-.771.028-1.331.157-1.682.386-.351.23-.526.582-.526 1.055 0 .344.101.61.306.798.204.188.51.283.92.283zm9.807-6.733c.33 0 .601.024.815.07l-.16 1.527a3.109 3.109 0 0 0-.725-.084c-.655 0-1.186.214-1.593.641-.406.428-.61.984-.61 1.667v4.029h-1.638V7.77h1.283l.216 1.36h.084c.255-.46.588-.825 1-1.095.41-.27.853-.404 1.327-.404V7.63zm5.352 7.988c-1.166 0-2.052-.34-2.659-1.021-.606-.68-.91-1.658-.91-2.931 0-1.297.317-2.293.952-2.99.634-.697 1.55-1.046 2.75-1.046.813 0 1.544.151 2.196.453L35.92 9.4c-.692-.27-1.263-.404-1.714-.404-1.334 0-2.001.885-2.001 2.656 0 .864.166 1.514.498 1.947.333.435.82.652 1.461.652.73 0 1.42-.181 2.07-.544v1.429a3.259 3.259 0 0 1-.936.37 5.618 5.618 0 0 1-1.21.11v.002zm10.74-.14h-1.644V10.74c0-.594-.12-1.038-.36-1.33-.238-.293-.619-.44-1.139-.44-.688 0-1.192.206-1.516.617-.323.411-.485 1.1-.485 2.067v3.827h-1.638V4.635h1.638V7.39c0 .442-.028.913-.084 1.414h.104c.224-.372.533-.66.93-.864.398-.204.86-.306 1.391-.306 1.869 0 2.803.941 2.803 2.824v5.025-.003zm9.926-7.848c.962 0 1.71.349 2.247 1.046.537.697.805 1.675.805 2.934 0 1.264-.272 2.248-.815 2.953-.544.704-1.299 1.055-2.266 1.055-.976 0-1.733-.351-2.272-1.053h-.111l-.3.913h-1.227V4.634h1.638v2.579c0 .19-.01.474-.029.85l-.041.718h.07c.52-.767 1.287-1.15 2.3-1.15zm-.426 1.338c-.66 0-1.134.194-1.425.581-.29.388-.44 1.038-.45 1.948v.111c0 .938.15 1.618.446 2.039.298.42.783.63 1.458.63.58 0 1.02-.23 1.32-.69.301-.46.45-1.123.45-1.993 0-1.752-.6-2.627-1.799-2.627zm4.21-1.199h1.784l1.569 4.37c.237.624.394 1.209.474 1.757h.055c.041-.255.118-.566.23-.93.112-.365.703-2.097 1.77-5.197h1.771l-3.297 8.734c-.6 1.603-1.599 2.405-2.997 2.405a4.71 4.71 0 0 1-1.059-.118v-1.297c.246.056.527.084.844.084.79 0 1.345-.457 1.666-1.373l.286-.724-3.095-7.71h-.001z" fill="#FFF" fill-rule="evenodd"></path></svg></span></div><svg class="css-fpbvzc css-1s8q8x0 " viewBox="0 0 24 24"><path class="css-kqzqgg" d=" M15.41,16.58 L10.83,12 L15.41,7.41 L14,6 L8,12 L14,18 L15.41,16.58 Z"></path></svg></div></div></div><div class="css-hethnk" title="v6.26.0">v6.26.0</div><div class="css-1cahpio css-0"><svg class="css-fpbvzc css-1reikw1" viewBox="0 0 24 24"><path class="css-kqzqgg" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"></path></svg></div></div></div><div class="css-rwv9ty"><div class="css-1g985qb css-frujlx"><div class="css-1kgsz8j"><textarea autocomplete="off" placeholder="Write code here" style="display: none;">
+</textarea><div class="CodeMirror cm-s-default CodeMirror-wrap CodeMirror-focused"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 23px; left: 34px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true" style="bottom: 0px;"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 30px; margin-bottom: -17px; border-right-width: 13px; min-height: 46px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style=""><div class="CodeMirror-cursor" style="left: 4px; top: 19px; height: 19px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -30px; width: 30px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -30px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 46px;"></div><div class="CodeMirror-gutters" style="height: 59px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div></div></div></div></div></div><div class="css-1g985qb css-frujlx"><div class="css-1kgsz8j"><textarea autocomplete="off" placeholder="Compiled output will be shown here" style="display: none;">"use strict";
+
+(function () {
+    var $ = {
+        isArray: function isArray(value) {
+            return Object.prototype.toString.call(value) == '[object Array]';
+        },
+        all: function all(selector, contextElement) {
+            var nodeList,
+                list = [];
+            if (contextElement) {
+                nodeList = contextElement.querySelectorAll(selector);
+            } else {
+                nodeList = document.querySelectorAll(selector);
+            }
+            if (nodeList &amp;&amp; nodeList.length &gt; 0) {
+                list = Array.prototype.slice.call(nodeList);
+            }
+            return list;
+        },
+        delegate: function delegate($el, eventType, selector, fn) {
+            if (!$el) {
+                return;
+            }
+            $el.addEventListener(eventType, function (e) {
+                var targets = $.all(selector, $el);
+                if (!targets) {
+                    return;
+                }
+                for (var i = 0; i &lt; targets.length; i++) {
+                    var $node = e.target;
+                    while ($node) {
+                        if ($node == targets[i]) {
+                            fn.call($node, e);
+                            break;
+                        }
+                        $node = $node.parentNode;
+                        if ($node == $el) {
+                            break;
+                        }
+                    }
+                }
+            }, false);
+        }
+    };
+    function PreviewImage() {
+        this.style = "#previewImage-container{touch-action:none;-webkit-touch-action:none;line-height:100vh;background-color:#000;width:100vw;height:100vh;position:fixed;overflow:hidden;top:0;left:0;z-index: 1000;transition:transform .3s;-webkit-transition:transform .3s;-o-transition:transform .3s;transform:translate3d(100%,0,0);-webkit-transform:translate3d(100%,0,0);}#previewImage-container .previewImage-text{position:absolute;top:0.5rem;text-align:center;font-size:1.4rem;color:#fff;z-index:10;left:50%;line-height: normal;transform:translateX(-50%);-webkit-transform:translateX(-50%)}#previewImage-container .previewImage-text2{top:auto;bottom:1rem;left:1rem;right:1rem;text-align:left;transform:translateX(0);-webkit-transform:translateX(0);display:-webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 1;overflow: hidden;}#previewImage-container .previewImage-text .previewImage-text-index{font-size: 1.4rem;}#previewImage-container .previewImage-box{width:999999rem;height:100vh}#previewImage-container .previewImage-box .previewImage-item{width:100vw;height:100vh;margin-right:15px;float:left;text-align:center;display:-webkit-box;display:flex;-webkit-box-align:center;align-items: center;}#previewImage-container .previewImage-box .previewImage-item.previewImage-nobackground{background:none}#previewImage-container .previewImage-box .previewImage-item .previewImage-image{vertical-align:middle;width:100%}";
+        this.winw = window.innerWidth || document.body.clientWidth; //窗口的宽度
+        this.winh = window.innerHeight || document.body.clientHeight; //窗口的高度
+        this.originWinw = this.winw; //存储源窗口的宽度
+        this.originWinh = this.winh; //存储源窗口的高度
+        this.marginRight = 15; //图片之间的间隔-&gt;previewImage-item的margin-right
+        this.imageChageMoveX = this.marginRight + this.winw; //图片切换容器的x位移量
+        this.imageChageNeedX = Math.floor(this.winw * 0.5); //图片切换所需x位移量
+        this.cssprefix = ["", "webkit", "Moz", "ms", "o"]; //css前缀
+        this.version = '1.0.3'; //版本号
+        this.imgLoadCache = new Object(); //图片加载状态储存 key=md5(img.src),value={isload:true,elem:img};
+        this.scale = 1; //默认图片放大倍数
+        this.maxScale = 4; //图片默认最大放大倍数
+        this.maxOverScale = 6; //图片放大倍数最大可达到
+        // this.minScale = 0.5; //图片最小可放大倍数
+        this.openTime = 0.3; //打开图片浏览动画时间
+        this.slipTime = 0.5; //图片切换时间
+        this.maxOverWidthPercent = 0.5; //边界图片最大可拉取宽度，屏幕宽度的百分比
+        this.$box = false; //图片容器加载状态
+        this.isPreview = false; //是否正在预览图片
+        var $style = document.createElement('style'); //样式标签
+        $style.innerText = this.style; //加载样式
+        $style.type = 'text/css';
+        this.$container = document.createElement('div'); //加载容器
+        this.$container.id = 'previewImage-container'; //容器加上id
+        this.$container.style.width = this.winw + 'px'; //加上宽度
+        this.$container.style.height = this.winh + 'px'; //加上高度
+        document.body.appendChild(this.$container); //插入容器到body
+        document.head.appendChild($style); //插入样式到head
+        this.bind(); //绑定事件
+    }
+
+    PreviewImage.prototype.start = function (obj) {
+        //可优化 todo
+        var urls = obj.urls; //待预览的图片列表
+        var current = obj.current; //当前预览的图片地址
+
+        this.$container.innerHTML = ''; //清空容器
+        if (!urls || !$.isArray(urls) || urls.length == 0) {
+            //参数检测
+            throw new Error("urls must be a Array and the minimum length more than zero");
+            return;
+        }
+        if (!current) {
+            //参数检测
+            this.index = 0;
+            console.warn("current is empty,it will be the first value of urls!");
+        } else {
+            var index = urls.indexOf(current);
+            if (index &lt; 0) {
+                index = 0;
+                console.warn("current isnot on urls,it will be the first value of urls!");
+            }
+            this.index = index; //当前图片序号
+        }
+        this.urls = urls; //所有图片url列表
+        this.maxLen = urls.length - 1; //最大图片数 0&lt;=index&lt;=maxLen
+        this.cIndex = this.maxLen + 1; //containerIndex
+        this.bIndex = this.maxLen + 2; //boxIndex
+        this.imgStatusCache = new Object(); //图片信息储存
+        this.render(); //渲染预览模块
+    };
+
+    PreviewImage.prototype.render = function () {
+        var _this = this;
+        if (this.$box === false) {
+            //加载图片容器
+            var box = document.createElement('div');
+            box.className += 'previewImage-box';
+            this.$box = box; //更新图片容器
+        } else {
+            this.$box.innerHTML = ''; //已有图片容器-清空容器
+        }
+        var text = document.createElement('div'); //当前张数/总张数--文本标签
+        this.$text = text;
+        this.$text.className += 'previewImage-text';
+        this.$text.innerHTML = "&lt;span class='previewImage-text-index'&gt;" + (this.index + 1) + "/&lt;/span&gt;" + (this.maxLen + 1); //当前第几张/图片总数
+
+        var text2 = document.createElement('div');
+        this.$text2 = text2;
+        this.$text2.className += 'previewImage-text previewImage-text2';
+        this.$text2.innerHTML = this.urls[this.index].text || '';
+
+        this.container = this.imgStatusCache[this.cIndex] = { elem: this.$container, x: this.winw, y: 0, m: 0, my: 0, scale: 1, scalem: 1 }; //存储容器状态
+        this.box = this.imgStatusCache[this.bIndex] = { elem: this.$box, x: 0, y: 0, m: 0, my: 0, scale: 1, scalem: 1 }; //存储图片容器状态
+
+        for (var kk = 0, urls = this.urls; kk &lt; urls.length; kk++) {
+            (function (kk) {
+                var div = document.createElement('div');
+                var hash = urls[kk].src + kk;
+                var img;
+                var imgCache = _this.imgLoadCache[hash];
+                //缓存图片&amp;&amp;读取缓存图片
+                if (imgCache &amp;&amp; imgCache.isload) {
+                    //图片已加载--使用缓存
+                    img = imgCache.elem;
+                    div.className += " previewImage-nobackground";
+                } else {
+                    //图片未加载--加载图片，加入缓存
+                    img = new Image();
+                    img.className += 'previewImage-image';
+                    _this.imgLoadCache[hash] = { isload: false, elem: img };
+                    if (kk == _this.index) {
+                        //将当前需要预览的图片加载
+                        img.src = urls[kk].src;
+                        img.onload = function () {
+                            div.className += " previewImage-nobackground";
+                            _this.imgLoadCache[hash].isload = true;
+                        };
+                    }
+                }
+                _this.imgStatusCache[kk] = { hash: hash, x: 0, m: 0, y: 0, my: 0, scale: _this.scale, scalem: 1 }; //修改缓存状态
+                // img.setAttribute("data-index",i);  //未使用
+                div.className += ' previewImage-item';
+                div.appendChild(img);
+                _this.$box.appendChild(div); //将图片div加入 图片容器
+            })(kk);
+        }
+
+        this.$container.appendChild(this.$box); //加载图片容器
+        this.$container.appendChild(this.$text); //加载图片张数提示
+        this.$container.appendChild(this.$text2);
+        var offsetX = -this.imageChageMoveX * this.index; //计算显示当前图片，容器所需偏移量
+        this.box.x = offsetX; //将图片容器所需偏移量，存入状态缓存器
+        this.container.x = 0; //显示预览模块
+        this.$container.style.display = "block";
+        setTimeout(function () {
+            _this.translateScale(_this.bIndex, 0);
+            _this.translateScale(_this.cIndex, _this.openTime);
+            _this.isPreview = true;
+        }, 50);
+    };
+
+    PreviewImage.prototype.bind = function () {
+        var $container = this.$container;
+        var _this = this;
+        var closePreview = function closePreview() {
+            _this.closePreview();
+        };
+        var touchStartFun = function touchStartFun() {
+            _this.touchStartFun();
+        };
+        var touchMoveFun = function touchMoveFun() {
+            _this.touchMoveFun();
+        };
+        var touchEndFun = function touchEndFun() {
+            _this.touchEndFun();
+        };
+
+        var reSizeFun = function reSizeFun() {
+            var _this = this;
+            _this.winw = window.innerWidth || document.body.clientWidth; //窗口的宽度
+            _this.winh = window.innerHeight || document.body.clientHeight; //窗口的高度
+            _this.originWinw = _this.winw; //存储源窗口的宽度
+            _this.originWinh = _this.winh; //存储源窗口的高度
+            _this.$container.style.width = _this.winw + 'px'; //改变宽度
+            _this.$container.style.height = _this.winh + 'px'; //改变高度
+            _this.imageChageMoveX = _this.marginRight + _this.winw;
+            var offsetX = -_this.imageChageMoveX * _this.index; //计算显示当前图片，容器所需偏移量
+            _this.box.x = offsetX; //将图片容器所需偏移量，存入状态缓存器
+            _this.translateScale(_this.bIndex, 0);
+        };
+
+        // window.addEventListener("orientationchange",orientationChangeFun,false);
+        window.addEventListener("resize", reSizeFun, false);
+        $.delegate($container, 'click', '.previewImage-item', closePreview);
+        $.delegate($container, 'touchstart', '.previewImage-item', touchStartFun);
+        $.delegate($container, 'touchmove', '.previewImage-item', touchMoveFun);
+        $.delegate($container, 'touchend', '.previewImage-item', touchEndFun);
+        $.delegate($container, 'touchcancel', '.previewImage-item', touchEndFun);
+    };
+
+    PreviewImage.prototype.closePreview = function () {
+        var _this = this;
+        this.imgStatusCache[this.cIndex].x = this.winw;
+        this.translateScale(this.cIndex, this.openTime);
+        this.imgStatusRewrite();
+        this.translateScale(this.index, this.slipTime);
+        setTimeout(function () {
+            _this.$container.style.display = "none";
+        }, this.slipTime * 1000);
+        _this.isPreview = false;
+    };
+
+    PreviewImage.prototype.touchStartFun = function (imgitem) {
+        this.ts = this.getTouches();
+        this.allowMove = true; //行为标记
+        this.statusX = 0; //标记X轴位移状态
+        this.statusY = 0; //标记Y轴位移状态
+    };
+
+    PreviewImage.prototype.touchMoveFun = function (imgitem) {
+        this.tm = this.getTouches();
+        var tm = this.tm;
+        var ts = this.ts;
+        this.moveAction(ts, tm);
+    };
+
+    PreviewImage.prototype.touchEndFun = function (imgitem) {
+        var $container = this.$container;
+        this.te = this.getTouches();
+        this.endAction(this.ts, this.te);
+    };
+
+    PreviewImage.prototype.moveAction = function (ts, tm) {
+        if (!this.allowMove) {
+            return;
+        }
+        var imgStatus = this.getIndexImage();
+        var maxWidth = this.winw * 0.3 / imgStatus.scale;
+        var x0_offset = tm.x0 - ts.x0;
+        var y0_offset = tm.y0 - ts.y0;
+        if (Math.abs(y0_offset) &gt; 0) {
+            //阻止Ios系统的浏览器环境上下滑动
+            event.preventDefault();
+        }
+        var imgPositionX = imgStatus.x + x0_offset;
+        var imgPositionY = imgStatus.y + y0_offset;
+        var allow = this.getAllow(this.index);
+        var allowX = this.allowX = allow.x;
+        var allowY = this.allowY = allow.y0;
+        if (x0_offset &lt;= 0) {
+            //边界
+            this.allowX = -allowX;
+        }
+        if (y0_offset &lt;= 0) {
+            //边界
+            allowY = this.allowY = allow.y1;
+        }
+        if (tm.length == 1) {
+            //单手指(图片位移)
+            if (imgStatus.scale &gt; 1) {
+                //Y方向位移
+                if (imgPositionY &gt;= allow.y0) {
+                    //超过窗口上边界
+                    this.statusY = 1;
+                    var overY = imgPositionY - allow.y0;
+                    imgStatus.my = allow.y0 - imgStatus.y + this.getSlowlyNum(overY, maxWidth);
+                } else if (imgPositionY &lt;= allow.y1) {
+                    //超过窗口下边界
+                    this.statusY = 1;
+                    var overY = imgPositionY - allow.y1;
+                    imgStatus.my = allow.y1 - imgStatus.y + this.getSlowlyNum(overY, maxWidth);
+                } else {
+                    this.statusY = 2;
+                    imgStatus.my = y0_offset;
+                }
+
+                //X方向位移
+                if (x0_offset &lt; 0 &amp;&amp; imgStatus.x &lt;= -allowX) {
+                    //左滑-&gt;初始状态到达或超过右边界-&gt;图片平滑移动到达条件-切换下一张
+                    this.statusX = 1;
+                    this.box.m = x0_offset; //更新位移信息
+                    if (this.index == this.maxLen) {
+                        //box到达右边界
+                        this.box.m = this.getSlowlyNum(x0_offset); //阻尼效果
+                    }
+                    this.translateScale(this.bIndex, 0);
+                    this.translateScale(this.index, 0);
+                } else if (x0_offset &gt; 0 &amp;&amp; imgStatus.x &gt;= allowX) {
+                    //右滑-&gt;初始状态到达或超过左边界-&gt;图片平滑移动到达条件-切换上一张
+                    this.statusX = 2;
+                    this.box.m = x0_offset;
+                    if (this.index == 0) {
+                        //box到达左边界
+                        this.box.m = this.getSlowlyNum(x0_offset); //阻尼效果
+                    }
+                    this.translateScale(this.bIndex, 0);
+                    this.translateScale(this.index, 0);
+                } else {
+                    //初始状态未到边界-&gt;图片平滑移动到边界-&gt;阻尼移动
+                    if (x0_offset == 0) {
+                        return;
+                    }
+                    this.statusX = 3;
+                    imgStatus.m = x0_offset;
+                    if (imgPositionX &gt;= allowX) {
+                        //右滑到达左边界
+                        this.statusX = 4;
+                        var overX = imgPositionX - allowX;
+                        imgStatus.m = allowX - imgStatus.x + this.getSlowlyNum(overX, maxWidth);
+                    }
+                    if (imgPositionX &lt;= -allowX) {
+                        //左滑到达右边界
+                        this.statusX = 4;
+                        var overX = imgPositionX + allowX;
+                        imgStatus.m = -allowX - imgStatus.x + this.getSlowlyNum(overX, maxWidth);
+                    }
+                    this.translateScale(this.index, 0);
+                }
+            } else {
+                //scale == 1;
+                if (Math.abs(y0_offset) &gt; 5 &amp;&amp; this.statusX != 5) {
+                    //长图片处理
+                    var $img = this.getJqElem(this.index);
+                    var imgBottom = $img.height - this.winh;
+                    if (y0_offset &gt; 0 &amp;&amp; imgPositionY &gt; 0) {
+                        this.statusX = 7;
+                        this.allowY = 0;
+                        imgStatus.my = -imgStatus.y + this.getSlowlyNum(imgPositionY, maxWidth);
+                    } else if (y0_offset &lt; 0 &amp;&amp; imgPositionY &lt; -imgBottom) {
+                        this.statusX = 7;
+                        if ($img.height &gt; this.winh) {
+                            var overY = imgPositionY + imgBottom;
+                            this.allowY = -imgBottom;
+                            imgStatus.my = -imgBottom - imgStatus.y + this.getSlowlyNum(overY, maxWidth);
+                        } else {
+                            this.allowY = 0;
+                            imgStatus.my = -imgStatus.y + this.getSlowlyNum(imgPositionY, maxWidth);
+                        }
+                    } else {
+                        this.statusX = 6;
+                        imgStatus.my = y0_offset;
+                    }
+                    this.translateScale(this.index, 0);
+                } else {
+                    if (this.statusX == 6) {
+                        return;
+                    }
+                    this.statusX = 5;
+                    if (this.index == 0 &amp;&amp; x0_offset &gt; 0 || this.index == this.maxLen &amp;&amp; x0_offset &lt; 0) {
+                        //box到达左右边界
+                        this.box.m = this.getSlowlyNum(x0_offset);
+                    } else {
+                        this.box.m = x0_offset;
+                    }
+                    this.translateScale(this.bIndex, 0);
+                }
+            }
+        } else {
+            //多手指(图片放大缩小)
+            var scalem = this.getScale(ts, tm);
+            var scale = scalem * imgStatus.scale;
+            if (scale &gt;= this.maxScale) {
+                //达到最大放大倍数
+                var over = scale - this.maxScale;
+                scale = this.maxScale + this.getSlowlyNum(over, this.maxOverScale);
+                scalem = scale / imgStatus.scale;
+            }
+            imgStatus.scalem = scalem;
+            this.translateScale(this.index, 0);
+        }
+    };
+
+    PreviewImage.prototype.endAction = function (ts, te) {
+        var imgStatus = this.getIndexImage();
+        var x0_offset = te.x0 - ts.x0;
+        var y0_offset = te.y0 - ts.y0;
+        var time = te.time - ts.time;
+        var slipTime = 0;
+        this.allowMove = false; //结束所有行为
+        if (ts.length == 1) {
+            //单手指(图片位移)
+            if (Math.abs(x0_offset) &gt; 10) {
+                //防止误触关闭看图
+                event.preventDefault();
+            }
+            switch (this.statusY) {
+                case 1:
+                    imgStatus.y = this.allowY;
+                    imgStatus.my = 0;
+                    slipTime = this.slipTime;
+                    break;
+                case 2:
+                    imgStatus.y = imgStatus.y + imgStatus.my;
+                    imgStatus.my = 0;
+                    break;
+            }
+
+            switch (this.statusX) {
+                case 1:
+                    //左滑-&gt;初始状态到达或超过右边界-&gt;图片平滑移动到达条件-切换下一图
+                    if (this.index != this.maxLen &amp;&amp; (x0_offset &lt;= -this.imageChageNeedX || time &lt; 200 &amp;&amp; x0_offset &lt; -30)) {
+                        //下一图
+                        this.changeIndex(1);
+                    } else {
+                        this.changeIndex(0);
+                        if (slipTime != 0) {
+                            this.translateScale(this.index, slipTime);
+                        }
+                    }
+                    break;
+                case 2:
+                    //右滑-&gt;初始状态到达或超过左边界-&gt;图片平滑移动到达条件-切换上一图
+                    if (this.index != 0 &amp;&amp; (x0_offset &gt;= this.imageChageNeedX || time &lt; 200 &amp;&amp; x0_offset &gt; 30)) {
+                        //上一图
+                        this.changeIndex(-1);
+                    } else {
+                        this.changeIndex(0);
+                        if (slipTime != 0) {
+                            this.translateScale(this.index, slipTime);
+                        }
+                    }
+                    break;
+                case 3:
+                    //scale&gt;1,初始状态未到边界-&gt;图片平滑移动未到边界
+                    imgStatus.x = imgStatus.x + imgStatus.m;
+                    imgStatus.m = 0;
+                    this.translateScale(this.index, slipTime);
+                    break;
+                case 4:
+                    //scale&gt;1,初始状态未到边界-&gt;图片平滑移动到边界-&gt;阻尼移动
+                    imgStatus.x = this.allowX;
+                    imgStatus.m = 0;
+                    slipTime = this.slipTime;
+                    this.translateScale(this.index, slipTime);
+                    break;
+                case 5:
+                    //scale=1,box位移，图片切换
+                    if (x0_offset &gt;= this.imageChageNeedX || time &lt; 200 &amp;&amp; x0_offset &gt; 30) {
+                        //上一图
+                        this.changeIndex(-1);
+                    } else if (x0_offset &lt;= -this.imageChageNeedX || time &lt; 200 &amp;&amp; x0_offset &lt; -30) {
+                        //下一图
+                        this.changeIndex(1);
+                    } else {
+                        this.changeIndex(0);
+                    }
+                    break;
+                case 6:
+                    //scale=1,长图片
+                    imgStatus.y = imgStatus.y + imgStatus.my;
+                    imgStatus.my = 0;
+                    break;
+                case 7:
+                    //scale=1,长图片 到边界
+                    imgStatus.y = this.allowY;
+                    imgStatus.my = 0;
+                    this.translateScale(this.index, this.slipTime);
+                    break;
+            }
+        } else {
+            // 放大倍数问题
+            event.preventDefault();
+
+            var scale = imgStatus.scale * imgStatus.scalem;
+            var $img = this.getJqElem(this.index);
+            imgStatus.scale = scale;
+            var allow = this.getAllow(this.index);
+
+            if (imgStatus.x &gt; allow.x) {
+                slipTime = this.slipTime;
+                imgStatus.x = allow.x;
+            } else if (imgStatus.x &lt; -allow.x) {
+                slipTime = this.slipTime;
+                imgStatus.x = -allow.x;
+            }
+
+            if (imgStatus.y &gt; allow.y0) {
+                slipTime = this.slipTime;
+                imgStatus.y = allow.y0;
+            } else if (imgStatus.y &lt; allow.y1) {
+                slipTime = this.slipTime;
+                imgStatus.y = allow.y1;
+            }
+
+            if ($img.height * imgStatus.scale &lt;= this.winh) {
+                imgStatus.y = 0;
+            }
+
+            if ($img.width * imgStatus.scale &lt;= this.winw) {
+                imgStatus.x = 0;
+            }
+
+            imgStatus.scalem = 1;
+            if (scale &gt; this.maxScale) {
+                //倍数大于最大限制倍数
+                imgStatus.scale = this.maxScale;
+                slipTime = this.slipTime;
+            } else if (scale &lt; 1) {
+                //倍数小于1
+                this.imgStatusRewrite();
+                slipTime = this.slipTime;
+            }
+            if (slipTime != 0) {
+                this.changeIndex(0);
+                this.translateScale(this.index, slipTime);
+            }
+        }
+    };
+
+    PreviewImage.prototype.getAllow = function (index) {
+        var $img = this.getJqElem(index);
+        var imgStatus = this.getIndexImage(index);
+        var allowX = Math.floor(($img.width * imgStatus.scale - this.winw) / (2 * imgStatus.scale));
+        var allowY0, allowY1;
+        if ($img.height * imgStatus.scale &lt;= this.winh) {
+            allowY0 = 0;
+            allowY1 = 0;
+        } else if ($img.height &lt;= this.winh) {
+            allowY0 = Math.floor(($img.height * imgStatus.scale - this.winh) / (2 * imgStatus.scale));
+            allowY1 = -allowY0;
+        } else {
+            allowY0 = Math.floor($img.height * (imgStatus.scale - 1) / (2 * imgStatus.scale));
+            allowY1 = -Math.floor(($img.height * (imgStatus.scale + 1) - 2 * this.winh) / (2 * imgStatus.scale));
+        }
+        return {
+            x: allowX,
+            y0: allowY0,
+            y1: allowY1
+        };
+    };
+
+    PreviewImage.prototype.getSlowlyNum = function (x, maxOver) {
+        var maxOver = maxOver || this.winw * this.maxOverWidthPercent;
+        if (x &lt; 0) {
+            x = -x;
+            return -(1 - x / (maxOver + x)) * x;
+        } else {
+            return (1 - x / (maxOver + x)) * x;
+        }
+    };
+
+    PreviewImage.prototype.getScale = function (ts, tm) {
+        var fingerRangeS = Math.sqrt(Math.pow(ts.x1 - ts.x0, 2) + Math.pow(ts.y1 - ts.y0, 2)); //两手指的初始距离
+        var fingerRangeM = Math.sqrt(Math.pow(tm.x1 - tm.x0, 2) + Math.pow(tm.y1 - tm.y0, 2)); //两手指移动过程中的距离
+        var range = fingerRangeM / fingerRangeS;
+        return range;
+    };
+
+    PreviewImage.prototype.imgStatusRewrite = function (index) {
+        var index = index === undefined ? this.index : index;
+        var imgStatus = this.imgStatusCache[index];
+        imgStatus.x = 0;
+        imgStatus.y = 0;
+        imgStatus.m = 0;
+        imgStatus.my = 0;
+        imgStatus.scale = 1;
+        imgStatus.scalem = 1;
+        if (index != this.index) {
+            this.translateScale(index, this.slipTime);
+        }
+    };
+
+    PreviewImage.prototype.changeIndex = function (x) {
+        var imgStatus = this.getIndexImage();
+        var oldIndex = this.index;
+        var _this = this;
+        if (this.index == 0 &amp;&amp; x == -1) {
+            this.index = this.index;
+        } else if (this.index == this.maxLen &amp;&amp; x == 1) {
+            this.index = this.index;
+        } else {
+            this.index += x;
+            this.$text.innerHTML = "&lt;span class='previewImage-text-index'&gt;" + (this.index + 1) + "/&lt;/span&gt;" + (this.maxLen + 1); //当前第几张/图片总数
+            this.$text2.innerHTML = _this.urls[this.index].text || '';
+            var hash = this.imgStatusCache[this.index].hash;
+            var imgCache = this.imgLoadCache[hash];
+            if (!imgCache.isload) {
+                //图片未缓存则加载图片
+                imgCache.elem.src = this.urls[this.index].src;
+                imgCache.elem.onload = function () {
+                    imgCache.elem.parentNode.className += " previewImage-nobackground";
+                    imgCache.isload = true;
+                };
+            } else {
+                imgCache.elem.parentNode.className += " previewImage-nobackground";
+            }
+        }
+        this.box.x = -this.imageChageMoveX * this.index;
+        this.box.m = 0;
+        if (oldIndex != this.index) {
+            this.imgStatusRewrite(oldIndex);
+        }
+        this.translateScale(this.bIndex, this.slipTime);
+    };
+
+    PreviewImage.prototype.getIndexImage = function (index) {
+        var index = index == undefined ? this.index : index;
+        return this.imgStatusCache[this.index];
+    };
+
+    PreviewImage.prototype.translateScale = function (index, duration) {
+        var imgStatus = this.imgStatusCache[index];
+        var scale = imgStatus.scale * imgStatus.scalem;
+        var offsetX = imgStatus.x + imgStatus.m;
+        var offsetY = imgStatus.y + imgStatus.my;
+        var tran_3d = 'scale3d(' + scale + ',' + scale + ',1) ' + ' translate3d(' + offsetX + 'px,' + offsetY + 'px,0px)';
+        // var tran_2d='scale('+scale+','+scale+') '+' translate(' + offsetX + 'px,' + offsetY +'px)';
+        var transition = 'transform ' + duration + 's ease-out';
+
+        this.addCssPrefix(this.getJqElem(index), 'transition', transition);
+        this.addCssPrefix(this.getJqElem(index), 'transform', tran_3d);
+    };
+
+    PreviewImage.prototype.getJqElem = function (index) {
+        var index = index == undefined ? this.index : index;
+        if (index &lt;= this.maxLen) {
+            var hash = this.imgStatusCache[index].hash;
+            var img = this.imgLoadCache[hash].elem;
+            return img;
+        } else {
+            var elem = this.imgStatusCache[index].elem;
+            return elem;
+        }
+        // return $elem
+    };
+
+    PreviewImage.prototype.addCssPrefix = function (elem, prop, value) {
+        //可以优化todo
+        for (var jj = 0; jj &lt; this.cssprefix.length; jj++) {
+            var cssprefix = this.cssprefix[jj];
+            if (cssprefix === "") {
+                prop = prop.toLowerCase();
+            } else {
+                var len = prop.length;
+                prop = prop.substr(0, 1).toUpperCase() + prop.substr(1, len).toLowerCase();
+            }
+
+            if (document.body.style[prop] !== undefined) {
+                elem.style[prop] = value;
+                return;
+            }
+        }
+    };
+
+    PreviewImage.prototype.getTouches = function (e) {
+        var touches = event.touches.length &gt; 0 ? event.touches : event.changedTouches;
+        var obj = {
+            touches: touches,
+            length: touches.length
+        };
+        obj.x0 = touches[0].pageX;
+        obj.y0 = touches[0].pageY;
+        obj.time = new Date().getTime();
+        if (touches.length &gt;= 2) {
+            obj.x1 = touches[0].pageX;
+            obj.y1 = touches[1].pageY;
+        }
+        return obj;
+    };
+
+    window.previewImage = new PreviewImage();
+})();</textarea><div class="CodeMirror cm-s-default CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 860px; left: 70px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true" style="display: block; bottom: 0px;"><div style="min-width: 1px; height: 13327px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 31px; margin-bottom: -17px; border-right-width: 13px; min-height: 13327px; padding-right: 17px; padding-bottom: 0px;"><div style="position: relative; top: 12160px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"><div class="CodeMirror-selected" style="position: absolute; left: 4px; top: 0px; width: 784px;"></div><div class="CodeMirror-selected" style="position: absolute; left: 4px; top: 1140px; width: 35px; height: 19px;"></div><div class="CodeMirror-selected" style="position: absolute; left: 4px; top: 0px; width: 784px; height: 1140px;"></div></div><div class="CodeMirror-cursors" style="visibility: hidden;"><div class="CodeMirror-cursor" style="left: 39px; top: 1140px; height: 19px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">621</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">var</span> <span class="cm-def">scale</span> <span class="cm-operator">=</span> <span class="cm-variable-2">imgStatus</span>.<span class="cm-property">scale</span> <span class="cm-operator">*</span> <span class="cm-variable-2">imgStatus</span>.<span class="cm-property">scalem</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">622</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">var</span> <span class="cm-def">offsetX</span> <span class="cm-operator">=</span> <span class="cm-variable-2">imgStatus</span>.<span class="cm-property">x</span> <span class="cm-operator">+</span> <span class="cm-variable-2">imgStatus</span>.<span class="cm-property">m</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">623</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">var</span> <span class="cm-def">offsetY</span> <span class="cm-operator">=</span> <span class="cm-variable-2">imgStatus</span>.<span class="cm-property">y</span> <span class="cm-operator">+</span> <span class="cm-variable-2">imgStatus</span>.<span class="cm-property">my</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">624</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">var</span> <span class="cm-def">tran_3d</span> <span class="cm-operator">=</span> <span class="cm-string">'scale3d('</span> <span class="cm-operator">+</span> <span class="cm-variable-2">scale</span> <span class="cm-operator">+</span> <span class="cm-string">','</span> <span class="cm-operator">+</span> <span class="cm-variable-2">scale</span> <span class="cm-operator">+</span> <span class="cm-string">',1) '</span> <span class="cm-operator">+</span> <span class="cm-string">' translate3d('</span> <span class="cm-operator">+</span> <span class="cm-variable-2">offsetX</span> <span class="cm-operator">+</span> <span class="cm-string">'px,'</span> <span class="cm-operator">+</span> <span class="cm-variable-2">offsetY</span> <span class="cm-operator">+</span> <span class="cm-string">'px,0px)'</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">625</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// var tran_2d='scale('+scale+','+scale+') '+' translate(' + offsetX + 'px,' + offsetY +'px)';</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">626</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">var</span> <span class="cm-def">transition</span> <span class="cm-operator">=</span> <span class="cm-string">'transform '</span> <span class="cm-operator">+</span> <span class="cm-variable-2">duration</span> <span class="cm-operator">+</span> <span class="cm-string">'s ease-out'</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">627</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">628</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">this</span>.<span class="cm-property">addCssPrefix</span>(<span class="cm-keyword">this</span>.<span class="cm-property">getJqElem</span>(<span class="cm-variable-2">index</span>), <span class="cm-string">'transition'</span>, <span class="cm-variable-2">transition</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">629</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">this</span>.<span class="cm-property">addCssPrefix</span>(<span class="cm-keyword">this</span>.<span class="cm-property">getJqElem</span>(<span class="cm-variable-2">index</span>), <span class="cm-string">'transform'</span>, <span class="cm-variable-2">tran_3d</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">630</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  };</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">631</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">632</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">PreviewImage</span>.<span class="cm-property">prototype</span>.<span class="cm-property">getJqElem</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span> (<span class="cm-def">index</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">633</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">var</span> <span class="cm-def">index</span> <span class="cm-operator">=</span> <span class="cm-variable-2">index</span> <span class="cm-operator">==</span> <span class="cm-atom">undefined</span> <span class="cm-operator">?</span> <span class="cm-keyword">this</span>.<span class="cm-property">index</span> : <span class="cm-variable-2">index</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">634</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable-2">index</span> <span class="cm-operator">&lt;=</span> <span class="cm-keyword">this</span>.<span class="cm-property">maxLen</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">635</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">var</span> <span class="cm-def">hash</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">imgStatusCache</span>[<span class="cm-variable-2">index</span>].<span class="cm-property">hash</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">636</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">var</span> <span class="cm-def">img</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">imgLoadCache</span>[<span class="cm-variable-2">hash</span>].<span class="cm-property">elem</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">637</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable-2">img</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">638</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  } <span class="cm-keyword">else</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">639</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">var</span> <span class="cm-def">elem</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">imgStatusCache</span>[<span class="cm-variable-2">index</span>].<span class="cm-property">elem</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">640</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable-2">elem</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">641</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">642</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// return $elem</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">643</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  };</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">644</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">645</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">PreviewImage</span>.<span class="cm-property">prototype</span>.<span class="cm-property">addCssPrefix</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span> (<span class="cm-def">elem</span>, <span class="cm-def">prop</span>, <span class="cm-def">value</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">646</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">//可以优化todo</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">647</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-keyword">var</span> <span class="cm-def">jj</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable-2">jj</span> <span class="cm-operator">&lt;</span> <span class="cm-keyword">this</span>.<span class="cm-property">cssprefix</span>.<span class="cm-property">length</span>; <span class="cm-variable-2">jj</span><span class="cm-operator">++</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">648</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">var</span> <span class="cm-def">cssprefix</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">cssprefix</span>[<span class="cm-variable-2">jj</span>];</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">649</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable-2">cssprefix</span> <span class="cm-operator">===</span> <span class="cm-string">""</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">650</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">prop</span> <span class="cm-operator">=</span> <span class="cm-variable-2">prop</span>.<span class="cm-property">toLowerCase</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">651</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  } <span class="cm-keyword">else</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">652</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">var</span> <span class="cm-def">len</span> <span class="cm-operator">=</span> <span class="cm-variable-2">prop</span>.<span class="cm-property">length</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">653</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">prop</span> <span class="cm-operator">=</span> <span class="cm-variable-2">prop</span>.<span class="cm-property">substr</span>(<span class="cm-number">0</span>, <span class="cm-number">1</span>).<span class="cm-property">toUpperCase</span>() <span class="cm-operator">+</span> <span class="cm-variable-2">prop</span>.<span class="cm-property">substr</span>(<span class="cm-number">1</span>, <span class="cm-variable-2">len</span>).<span class="cm-property">toLowerCase</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">654</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">655</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">656</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">document</span>.<span class="cm-property">body</span>.<span class="cm-property">style</span>[<span class="cm-variable-2">prop</span>] <span class="cm-operator">!==</span> <span class="cm-atom">undefined</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">657</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">elem</span>.<span class="cm-property">style</span>[<span class="cm-variable-2">prop</span>] <span class="cm-operator">=</span> <span class="cm-variable-2">value</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">658</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">659</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">660</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">661</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  };</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">662</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">663</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-2">PreviewImage</span>.<span class="cm-property">prototype</span>.<span class="cm-property">getTouches</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span> (<span class="cm-def">e</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">664</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">var</span> <span class="cm-def">touches</span> <span class="cm-operator">=</span> <span class="cm-variable">event</span>.<span class="cm-property">touches</span>.<span class="cm-property">length</span> <span class="cm-operator">&gt;</span> <span class="cm-number">0</span> <span class="cm-operator">?</span> <span class="cm-variable">event</span>.<span class="cm-property">touches</span> : <span class="cm-variable">event</span>.<span class="cm-property">changedTouches</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">665</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">var</span> <span class="cm-def">obj</span> <span class="cm-operator">=</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">666</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-property">touches</span>: <span class="cm-variable-2">touches</span>,</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">667</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-property">length</span>: <span class="cm-variable-2">touches</span>.<span class="cm-property">length</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">668</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  };</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">669</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">obj</span>.<span class="cm-property">x0</span> <span class="cm-operator">=</span> <span class="cm-variable-2">touches</span>[<span class="cm-number">0</span>].<span class="cm-property">pageX</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">670</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">obj</span>.<span class="cm-property">y0</span> <span class="cm-operator">=</span> <span class="cm-variable-2">touches</span>[<span class="cm-number">0</span>].<span class="cm-property">pageY</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">671</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">obj</span>.<span class="cm-property">time</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Date</span>().<span class="cm-property">getTime</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">672</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable-2">touches</span>.<span class="cm-property">length</span> <span class="cm-operator">&gt;=</span> <span class="cm-number">2</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">673</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">obj</span>.<span class="cm-property">x1</span> <span class="cm-operator">=</span> <span class="cm-variable-2">touches</span>[<span class="cm-number">0</span>].<span class="cm-property">pageX</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">674</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-2">obj</span>.<span class="cm-property">y1</span> <span class="cm-operator">=</span> <span class="cm-variable-2">touches</span>[<span class="cm-number">1</span>].<span class="cm-property">pageY</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">675</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">676</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable-2">obj</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">677</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  };</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">678</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">679</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">window</span>.<span class="cm-property">previewImage</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable-2">PreviewImage</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -31px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 22px;">680</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">})();</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; border-bottom: 0px solid transparent; top: 13327px;"></div><div class="CodeMirror-gutters" style="height: 13340px; left: 0px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 30px;"></div></div></div></div></div></div></div></div></div><script src="./let_files/jquery.min.js.下载" defer=""></script> <script src="./let_files/lodash.min.js.下载" defer=""></script> <script src="./let_files/bootstrap.min.js.下载" defer=""></script> <script src="./let_files/clipboard.min.js.下载" defer=""></script> <script src="./let_files/docsearch.min.js.下载" defer=""></script> <script src="./let_files/search.js.下载" defer=""></script> <script src="./let_files/clipboard.js.下载" defer=""></script> <script src="./let_files/open-in-repl.js.下载" defer=""></script> <script> document.addEventListener('DOMContentLoaded', function() { $("html").removeClass("no-js").addClass("js"); }); </script> <script src="./let_files/react.production.min.js.下载" defer=""></script> <script src="./let_files/react-dom.production.min.js.下载" defer=""></script> <script src="./let_files/codemirror.js.下载" defer=""></script> <script src="./let_files/javascript.js.下载" defer=""></script> <script src="./let_files/xml.js.下载" defer=""></script> <script src="./let_files/jsx.js.下载" defer=""></script> <script src="./let_files/sublime.js.下载" defer=""></script> <script src="./let_files/comment.js.下载" defer=""></script> <script src="./let_files/placeholder.js.下载" defer=""></script> <script src="./let_files/matchbrackets.js.下载" defer=""></script> <script src="./let_files/searchcursor.js.下载" defer=""></script> <script src="./let_files/active-line.js.下载" defer=""></script> <script src="./let_files/base64-string.js.下载" defer=""></script> <script src="./let_files/lz-string.min.js.下载" defer=""></script> <script src="./let_files/repl.js.下载" defer=""></script>
+</body></html>
